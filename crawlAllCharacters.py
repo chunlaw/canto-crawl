@@ -14,12 +14,12 @@ specialChars = {
 }
 
 def getAllCharaters():
-  if path.exists('all.txt'):
+  if path.exists('dist/all.txt'):
     return
   page = requests.get('https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/rad.php')
   soup = BeautifulSoup(page.content.decode('big5', 'ignore'), "html.parser")
 
-  with open('all.txt', 'w') as f:
+  with open('dist/all.txt', 'w') as f:
     rads = [a['href'] for a in soup.find_all('table')[1].find_all('a')]
     for rad in rads:
       page = requests.get('https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/'+rad)
@@ -75,9 +75,9 @@ def crawlCharacter(char = '愛', code="%B7R"):
 if __name__ == '__main__':
   getAllCharaters()
   dict = {}
-  with open('all.txt') as f:
+  with open('dist/all.txt') as f:
     for line in f.readlines():
       [code, char] = line.replace('search.php?q=', '').replace("\n", '').split(' ')
-      if not path.exists("dict/"+char+".json"):
-        with open("dict/"+char+".json", 'w') as o:
+      if not path.exists("dist/dict/"+char+".json"):
+        with open("dist/dict/"+char+".json", 'w') as o:
           o.write(json.dumps(crawlCharacter(char=char, code=code), ensure_ascii=False))

@@ -2,6 +2,4 @@
 .vscode
 
 # crawling results
-dict
-wav
-all.txt
+dist
