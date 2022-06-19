@@ -81,3 +81,8 @@ if __name__ == '__main__':
       if not path.exists("dist/dict/"+char+".json"):
         with open("dist/dict/"+char+".json", 'w') as o:
           o.write(json.dumps(crawlCharacter(char=char, code=code), ensure_ascii=False))
+      with open("dist/dict/"+char+".json") as o:
+        dict[char] = json.load(o)
+  
+  with open('dist/dict.json', 'w') as f:
+    f.write(json.dumps(dict, ensure_ascii=False))
