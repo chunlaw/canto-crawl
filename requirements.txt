@@ -3,11 +3,12 @@
 # platform: osx-64
 beautifulsoup4=4.11.1=py38hecd8cb5_0
 brotlipy=0.7.0=py38h9ed2024_1003
-ca-certificates=2022.5.18.1=h033912b_0
-certifi=2022.5.18.1=py38h50d1736_0
+ca-certificates=2022.6.15=h033912b_0
+certifi=2022.6.15=py38h50d1736_0
 cffi=1.15.0=py38hc55c11b_1
 charset-normalizer=2.0.4=pyhd3eb1b0_0
 cryptography=37.0.1=py38hf6deb26_0
+ghp-import=2.1.0=pyhd8ed1ab_0
 idna=3.3=pyhd3eb1b0_0
 libcxx=12.0.0=h2f01273_0
 libffi=3.3=hb1e8313_2
@@ -19,10 +20,12 @@ pydub=0.25.1=pyhd8ed1ab_0
 pyopenssl=22.0.0=pyhd3eb1b0_0
 pysocks=1.7.1=py38_1
 python=3.8.13=hdfd78df_0
+python-dateutil=2.8.2=pyhd8ed1ab_0
 python_abi=3.8=2_cp38
 readline=8.1.2=hca72f7f_1
 requests=2.27.1=pyhd3eb1b0_0
 setuptools=61.2.0=py38hecd8cb5_0
+six=1.16.0=pyh6c4a22f_0
 soupsieve=2.3.1=pyhd3eb1b0_0
 sqlite=3.38.3=h707629a_0
 tk=8.6.12=h5d9f67b_0
