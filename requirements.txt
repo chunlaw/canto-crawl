@@ -1,0 +1,32 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+beautifulsoup4=4.11.1=py38hecd8cb5_0
+brotlipy=0.7.0=py38h9ed2024_1003
+ca-certificates=2022.5.18.1=h033912b_0
+certifi=2022.5.18.1=py38h50d1736_0
+cffi=1.15.0=py38hc55c11b_1
+charset-normalizer=2.0.4=pyhd3eb1b0_0
+cryptography=37.0.1=py38hf6deb26_0
+idna=3.3=pyhd3eb1b0_0
+libcxx=12.0.0=h2f01273_0
+libffi=3.3=hb1e8313_2
+ncurses=6.3=hca72f7f_2
+openssl=1.1.1o=hfe4f2af_0
+pip=21.2.4=py38hecd8cb5_0
+pycparser=2.21=pyhd3eb1b0_0
+pydub=0.25.1=pyhd8ed1ab_0
+pyopenssl=22.0.0=pyhd3eb1b0_0
+pysocks=1.7.1=py38_1
+python=3.8.13=hdfd78df_0
+python_abi=3.8=2_cp38
+readline=8.1.2=hca72f7f_1
+requests=2.27.1=pyhd3eb1b0_0
+setuptools=61.2.0=py38hecd8cb5_0
+soupsieve=2.3.1=pyhd3eb1b0_0
+sqlite=3.38.3=h707629a_0
+tk=8.6.12=h5d9f67b_0
+urllib3=1.26.9=py38hecd8cb5_0
+wheel=0.37.1=pyhd3eb1b0_0
+xz=5.2.5=hca72f7f_1
+zlib=1.2.12=h4dc903c_2
