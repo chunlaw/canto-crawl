@@ -61,7 +61,7 @@ def parseSource(elem):
   return text
 
 
-def crawlCharacter(char = '愛', code="%B7R"):
+def crawlCharacter(char = '万', code="%C9E"):
   page = requests.get('https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/search.php?q='+code, cookies={"Canton": "1"})
   soup = BeautifulSoup(page.content.decode('big5', 'ignore'), "html.parser")
   cells = soup.find_all('table')[0].find_all('td')
@@ -76,19 +76,19 @@ def crawlCharacter(char = '愛', code="%B7R"):
   for row in rows:
     phonetic = [font.get_text() for font in row.find_all('td')[0].find_all('font')]
     explanation = row.find_all('td')[-1]
-    for a in explanation.select('a'):
+    for a in explanation.select('a[href^="#"]'):
       a.extract()
     explanation = row.find_all('td')[-1].get_text()
     phonetics[0].append([phonetic, explanation])
 
-  page = requests.get('https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/search.php?q='+code, cookies={"Canton": "1"})
+  page = requests.get('https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/search.php?q='+code, cookies={"Canton": "2"})
   soup = BeautifulSoup(page.content, "html.parser")
   rows = soup.find_all('table')[1].find_all('tr')[1:]
   for row in rows:
     phonetic = [font.get_text() for font in row.find_all('td')[0].find_all('font')]
     sources = parseSource(row.find_all('td')[2])
     explanation = row.find_all('td')[-1]
-    for a in explanation.select('a'):
+    for a in explanation.select('a[href^="#"]'):
       a.extract()
     explanation = row.find_all('td')[-1].get_text()
     phonetics[1].append([phonetic, explanation])
@@ -114,6 +114,7 @@ def crawlCharacter(char = '愛', code="%B7R"):
 if __name__ == '__main__':
   getAllCharaters()
   crawlCharacter()
+  
   dict = {}
   with open('dist/all.txt') as f:
     for line in f.readlines():
@@ -127,3 +128,4 @@ if __name__ == '__main__':
   
   with open('dist/dict.json', 'w') as f:
     f.write(json.dumps(dict, ensure_ascii=False))
+  
